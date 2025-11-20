@@ -51,14 +51,19 @@ p {
     color: var(--white);
     border-radius: 26px;
     width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column-reverse;
 }
 
 .card_message {
     padding: 20px;
     border-bottom: 1px solid var(--white);
+    width: 100%;
 }
 
-.card_message:last-child {
+.card_message:first-child {
     border-bottom: none;
 }
 

@@ -30,6 +30,11 @@ def admin():
         return render_template("admin.html", messages=mes, name="Mattia", visual=vis)
     else:
         return render_template("admin_check.html")
+    
+@app.post("/update_messages")
+def update_message():
+    mes = return_messages()
+    return {"messages": mes}
 
 @app.post("/update_visual")
 def update_visual():
