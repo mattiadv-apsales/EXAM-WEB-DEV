@@ -1,9 +1,22 @@
 import json
 
-id = 1
+def last_id():
+    users = []
+    l_id = 0
+    try:
+        with open("messages.json", "r") as file:
+            users = json.load(file)
+
+        for user in users:
+            l_id = user['id']
+    except:
+        l_id = 0
+
+    return l_id
 
 def save_message(name, surname, email, message):
-    global id
+    id = last_id()
+    id += 1
     try:
         new = {
             "id": id,
@@ -23,8 +36,8 @@ def save_message(name, surname, email, message):
         with open("messages.json", "w") as file:
             json.dump(all_message, file, indent=4)
 
-        id += 1
-
         return True
     except:
         return False
+    
+save_message("m", 'm', 'm', 'm')
