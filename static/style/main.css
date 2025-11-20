@@ -402,6 +402,27 @@ footer > .credits {
     text-align: center;
 }
 
+.range {
+    width: 100%;
+    height: 20px;
+    border-radius: 26px;
+    background: var(--backgrund);
+}
+
+.range > .medium_high {
+    width: 75%;
+    background: lightgreen;
+    height: 100%;
+    border-radius: 26px;
+}
+
+.range > .high {
+    width: 100%;
+    background: lightgreen;
+    height: 100%;
+    border-radius: 26px;
+}
+
 @media screen and (max-width: 768px) {
     article {
         width: 100%;
