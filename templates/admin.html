@@ -29,7 +29,7 @@
                         <div class = "info">{{message.cognome}}</div>
                         <div class = "info"><a href="mailto:{{message.email}}">{{message.email}}</a></div>
                         <div class = "info">{{message.messaggio}}</div>
-                        <button class = "delete_message_button" id = "{{message.id}}">Delete</button>
+                        <button class = "delete_message_button" id = "{{message.id}}" onclick="delete_messages({{message.id}})">Delete</button>
                     </div>
                 {%endfor%}
             </div>

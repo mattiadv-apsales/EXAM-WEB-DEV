@@ -21,7 +21,7 @@ messages_update.addEventListener('click', function() {
     fetch("/update_messages", {
         method: "POST",
         headers: {
-            "content-type": "applcation/json"
+            "content-type": "application/json"
         }
     })
     .then(response => response.json())
@@ -31,6 +31,7 @@ messages_update.addEventListener('click', function() {
         data.messages.forEach(msg => {
             let card_message = document.createElement('div')
             card_message.classList.add("card_message")
+            card_message.id = "card_" + msg["id"]
 
             let title = document.createElement('div')
             title.classList.add('title')
@@ -58,6 +59,9 @@ messages_update.addEventListener('click', function() {
             button.classList.add("delete_message_button")
             button.innerHTML = "Delete"
             button.id = msg["id"]
+            button.addEventListener('click', function() {
+                delete_messages(msg["id"])
+            })
 
             card_message.appendChild(title)
             card_message.appendChild(br)
@@ -73,7 +77,6 @@ messages_update.addEventListener('click', function() {
 })
 
 function delete_messages(id) {
-    console.log(id)
     fetch("/delete_message", {
         method: "POST",
         headers: {
@@ -91,11 +94,3 @@ function delete_messages(id) {
         }
     })
 }
-
-let all_delete_buttons = document.querySelectorAll('.delete_message_button');
-
-all_delete_buttons.forEach(but => {
-    but.addEventListener('click', function() {
-        delete_messages(but.id)
-    })
-})
