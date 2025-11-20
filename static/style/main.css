@@ -99,6 +99,11 @@ p {
     cursor: pointer;
     text-align: center;
     text-decoration: none;
+    transition: 0.4s;
+}
+
+.buttons > a > button:hover {
+    transform: scale(0.95);
 }
 
 /* HEADER PART */
