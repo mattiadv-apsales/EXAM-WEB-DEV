@@ -281,7 +281,7 @@ article > .container_article {
 }
 
 .positive {
-    color: var(--bg-card) !important;
+    color: lightgreen !important;
     padding: 20px;
     font-size: 16px;
 }

@@ -1,8 +1,12 @@
 import json
 
+id = 1
+
 def save_message(name, surname, email, message):
+    global id
     try:
         new = {
+            "id": id,
             "nome": name,
             "cognome": surname,
             "email": email,
@@ -18,6 +22,9 @@ def save_message(name, surname, email, message):
 
         with open("messages.json", "w") as file:
             json.dump(all_message, file, indent=4)
+
+        id += 1
+
         return True
     except:
         return False

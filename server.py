@@ -3,6 +3,7 @@ from verify_password import password_check
 from messages_back import return_messages
 from send_message import save_message
 from page_visual import visual_page, return_visual_page
+from delete_message import delete_messages
 from dotenv import load_dotenv
 import os
 from datetime import timedelta
@@ -35,6 +36,15 @@ def admin():
 def update_message():
     mes = return_messages()
     return {"messages": mes}
+
+@app.post("/delete_message")
+def delete_mes():
+    data = request.json
+    id = data["id"]
+    print(id)
+    response = delete_messages(id)
+    print(response)
+    return jsonify({"status": response})
 
 @app.post("/update_visual")
 def update_visual():

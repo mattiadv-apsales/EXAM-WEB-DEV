@@ -1,38 +1,9 @@
 [
     {
-        "nome": "Luca",
-        "cognome": "Rossi",
-        "email": "luca.rossi@example.com",
-        "messaggio": "Ciao, vorrei avere informazioni."
-    },
-    {
-        "nome": "Giulia",
-        "cognome": "Bianchi",
-        "email": "giulia.bianchi@example.com",
-        "messaggio": "Potete contattarmi appena possibile?"
-    },
-    {
-        "nome": "Marco",
-        "cognome": "Neri",
-        "email": "marco.neri@example.com",
-        "messaggio": "Ho inviato il modulo ma non ho ricevuto risposta."
-    },
-    {
-        "nome": "Sara",
-        "cognome": "Ferrari",
-        "email": "sara.ferrari@example.com",
-        "messaggio": "Grazie per il supporto!"
-    },
-    {
-        "nome": "Federica Rosalia",
-        "cognome": "Giannotti",
-        "email": "fedegiannotti11@gmail.com",
-        "messaggio": "Ciao come stai? volevo informazioni sui tuoi servizi!"
-    },
-    {
-        "nome": "Mattia",
-        "cognome": "De Vincentis",
-        "email": "mattiadv25105@gmail.com",
-        "messaggio": "Ciao volevo delle info sui servizi? please contattamiu"
+        "id": 1,
+        "nome": "asd",
+        "cognome": "asd",
+        "email": "asd@asd.com",
+        "messaggio": "asdasdasd asd asd asda sdasd asdasd asda sasd asd"
     }
 ]

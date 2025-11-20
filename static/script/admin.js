@@ -54,27 +54,48 @@ messages_update.addEventListener('click', function() {
             messa.classList.add("info")
             messa.innerHTML = msg["messaggio"]
 
+            let button = document.createElement('button')
+            button.classList.add("delete_message_button")
+            button.innerHTML = "Delete"
+            button.id = msg["id"]
+
             card_message.appendChild(title)
             card_message.appendChild(br)
             card_message.appendChild(name)
             card_message.appendChild(surname)
             card_message.appendChild(email)
             card_message.appendChild(messa)
+            card_message.appendChild(button)
 
             messages.appendChild(card_message)
         });
     })
 })
 
-/*
+function delete_messages(id) {
+    console.log(id)
+    fetch("/delete_message", {
+        method: "POST",
+        headers: {
+            "content-type": "application/json"
+        },
+        body: JSON.stringify({"id": id})
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status == true) {
+            let card = document.getElementById('card_' + id)
+            card.remove();
+        } else {
+            return 0;
+        }
+    })
+}
 
-<div class = "card_message">
-    <div class = "title">MESSAGE</div>
-    <br>
-    <div class = "info">{{message.nome}}</div>
-    <div class = "info">{{message.cognome}}</div>
-    <div class = "info"><a href="mailto:{{message.email}}">{{message.email}}</a></div>
-    <div class = "info">{{message.messaggio}}</div>
-</div>
+let all_delete_buttons = document.querySelectorAll('.delete_message_button');
 
-*/
+all_delete_buttons.forEach(but => {
+    but.addEventListener('click', function() {
+        delete_messages(but.id)
+    })
+})

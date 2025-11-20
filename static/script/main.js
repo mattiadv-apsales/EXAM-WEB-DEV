@@ -93,7 +93,12 @@ function send_form_server() {
                 output.innerHTML = "Messaggio non inviato, errore del server";
             }
 
-            setTimeout(clear_output, 1500)
+            name.value = ""
+            surname.value = ""
+            email.value = ""
+            message.value = ""
+
+            setTimeout(clear_output, 2500)
         })
     } else {
         output.classList.add("negative");
