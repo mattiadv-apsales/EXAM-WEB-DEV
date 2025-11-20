@@ -257,17 +257,17 @@ article > .container_article {
 
 .form_part > form > input[type = "text"]:focus {
     background: var(--color-white-theme);
-    color: var(--bg-card);
+    color: var(--white);
 }
 
 .form_part > form > input[type = "email"]:focus {
     background: var(--color-white-theme);
-    color: var(--bg-card);
+    color: var(--white);
 }
 
 .form_part > form > textarea:focus {
     background: var(--color-white-theme);
-    color: var(--bg-card);
+    color: var(--white);
 }
 
 .form_part > form > input[type = "submit"] {
