@@ -1,0 +1,1 @@
+let messages = document.getElementById('messages');

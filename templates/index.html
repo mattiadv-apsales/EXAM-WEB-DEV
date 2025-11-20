@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Portfolio MDV</title>
+        <link rel = "stylesheet" href = "../static/style/main.css">
+    </head>
+    <a id = "home"></a>
+    <body>
+        <div class = "bg">
+        </div>
+        <div class = "container">
+            <header>
+                <nav class = "navbar" id = "desktop">
+                    <ul class = "container_navbar" id = "container_navbar">
+                        <li><a href = "#home">Home</a></li>
+                        <li><a href = "#about">About</a></li>
+                        <li><a href = "#resume">Resume</a></li>
+                        <li><a href = "#contact">Contact</a></li>
+                    </ul>
+                </nav>
+                <nav class = "navbar_phone" id = "phone">
+                    <div class = "active_menu" id = "active_menu">≡</div>
+                    <ul class = "container_navbar_phone" id = "container_navbar_phone">
+                        <li><a href = "#home">Home</a></li>
+                        <li><a href = "#about">About</a></li>
+                        <li><a href = "#resume">Resume</a></li>
+                        <li><a href = "#contact">Contact</a></li>
+                        <li><a href = "#">Chiudi navbar</a></li>
+                    </ul>
+                </nav>
+            </header>
+            <main>
+                <a id = "about"></a>
+                <article>
+                    <div class = "container_article">
+                        <h1>About me</h1>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum quisquam amet atque inventore? Earum corporis blanditiis aperiam voluptate optio fuga deleniti vero quae quaerat, autem explicabo facere? Atque, amet quibusdam! Reprehenderit harum molestias animi omnis, fugit cupiditate amet possimus vitae eveniet nam perspiciatis fugiat eligendi dolorum quod sunt quis! Suscipit.</p>
+                    </div>
+                    <div class = "container_article">
+                        <div class = "card_me">
+                            <img src="../static/img/Screenshot 2025-08-18 141145.png">
+                            <h3>Mattia De Vincentis</h3>
+                            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Aliquid optio earum qui officia? Sed consequatur incidunt rem. Dolor, quas doloribus.</p>
+                        </div>
+                    </div>
+                </article>
+                <div class = "resume_part">
+                    <a id = "resume"></a>
+                    <h1>My resume?</h1>
+                    <div class = "education">
+                        <table>
+                            <thead>
+                                <th class = "title_table">Education</th>
+                            </thead>
+                            <tr class = "education_part_table">
+                                <td>
+                                    <div class = "qualify">Qualify: Perito informatico</div>
+                                    <div class = "year">2018 - 2023</div>
+                                </td>
+                                <td>
+                                    <div class = "qualify">Qualify: Digital marketing specialist</div>
+                                    <div class = "year">2023 - 2024</div>
+                                </td>
+                                <td>
+                                    <div class = "qualify">Qualify: Computer Engieneer & AI</div>
+                                    <div class = "year">2025 - Actual</div>
+                                </td>
+                            </tr>
+                        </table>
+                        <table>
+                            <thead>
+                                <th class = "title_table">Work</th>
+                            </thead>
+                            <tr class = "education_part_table">
+                                <td>
+                                    <div class = "qualify">Web Developer KLOJAF Studio / Nuoro - Sardegna</div>
+                                    <div class = "year">2021 - 2023</div>
+                                </td>
+                                <td>
+                                    <div class = "qualify">Web Developer / Torino - Piemonte</div>
+                                    <div class = "year">2022 - 2023</div>
+                                </td>
+                                <td>
+                                    <div class = "qualify">Web Developer - Myndo / Milano - Lombardia</div>
+                                    <div class = "year">2024 - 2025</div>
+                                </td>
+                                <td>
+                                    <div class = "qualify">IfThenNext - Personal Freelancer / Online - Torino - Piemonte</div>
+                                    <div class = "year">2024 - 2025</div>
+                                </td>
+                            </tr>
+                        </table>
+                        <table>
+                            <thead>
+                                <th class = "title_table">Skills</th>
+                            </thead>
+                            <tr class = "education_part_table">
+                                <td>
+                                    <div class = "qualify">Javascript</div>
+                                    <div class = "year">Medium-High</div>
+                                </td>
+                                <td>
+                                    <div class = "qualify">Python</div>
+                                    <div class = "year">Medium-High</div>
+                                </td>
+                                <td>
+                                    <div class = "qualify">HTML5</div>
+                                    <div class = "year">High</div>
+                                </td>
+                                <td>
+                                    <div class = "qualify">CSS3</div>
+                                    <div class = "year">High</div>
+                                </td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <div class = "form_part">
+                    <a id = "contact"></a>
+                    <form>
+                        <h1>SEND ME A MESSAGE</h1>
+                        <input type = "text" placeholder = "Insert name" id = "name" required>
+                        <input type = "text" placeholder = "Insert surname" id = "surname" required>
+                        <input type = "email" placeholder = "Insert email" id = "email" required>
+                        <textarea placeholder="Insert a message" id = "message" minlength=10 required></textarea>
+                        <input type = "submit" value = "SEND" id = "send_form">
+                        <div id = "output" class = "output"></div>
+                    </form>
+                    <div class = "contact_social">
+                        <div class = "social" id = "ig">
+                            <img src = "https://dreamfoundry.org/wp-content/uploads/2018/12/instagram-logo-png-transparent-background.png" width="30px" height="30px" alt = "Logo instagram">
+                            @mattia_de_vincentis.webdev
+                        </div>
+                        <div class = "social" id = "tt">
+                            <img src = "https://www.freepnglogos.com/uploads/tik-tok-logo-png/tik-tok-android-application-logos-3.png" width="30px" height="30px" alt = "Logo instagram">
+                            @mattiadv.blog
+                        </div>
+                        <div class = "social" id = "yt">
+                            <img src = "https://www.freepnglogos.com/uploads/official-youtube-logo-png-18.png" width="30px" height="30px" alt = "Logo instagram">
+                            @Mattia De Vincentis
+                        </div>
+                        <div class = "social" id = "gh">
+                            <img src = "https://images.icon-icons.com/2428/PNG/512/github_black_logo_icon_147128.png" width="30px" height="30px" alt = "Logo instagram">
+                            @mattiadv-apsales
+                        </div>
+                    </div>
+                </div>
+            </main>
+            <footer>
+                <div class = "credits">
+                    @Mattia De Vincentis
+                </div>
+            </footer>
+        </div>
+
+        <script src = "../static/script/main.js"></script>
+    </body>
+</html>

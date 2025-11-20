@@ -1,0 +1,444 @@
+/* RESETTING STYLE */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+    scroll-behavior: smooth;
+}
+
+/* COLOR FOR THE PAGE */
+:root {
+    --color: #222;
+    --white: #fff;
+    --color-white-theme: #333;
+    --bg-card: #222;
+    --color-black: #333;
+    --backgrund: #111;
+}
+
+body {
+    background: var(--backgrund);
+}
+
+h1 {
+    color: var(--white);
+}
+
+p {
+    color: var(--white);
+}
+
+/* CONTAINER OF THE PAGE */
+.container {
+    width: 90%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* BLURRED BACKGROUND */
+.bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 100%;
+    background: linear-gradient(
+    rgba(0,0,0,0.5), 
+    rgba(0,0,0,0.5)
+    ), url('../img/Screenshot 2025-08-18 141145.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    filter: blur(10px);
+    z-index: -9999;
+}
+
+/* HEADER PART */
+header {
+    min-height: 100vh;
+    max-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: column;
+}
+
+.container_navbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+}
+
+.container_navbar.active {
+    background: var(--color-white-theme);
+    color: var(--white);
+}
+
+.container_navbar > li {
+    list-style: none;
+}
+
+.container_navbar > li > a {
+    list-style: none;
+    padding: 10px;
+    border-radius: 13px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.4s;
+    text-decoration: none;
+    color: var(--white);
+}
+
+.container_navbar > li > a:hover {
+    color: var(--bg-card);
+}
+
+/* MAIN PART */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
+}
+article {
+    width: 100%;
+    padding: 20px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    margin-top: 50px;
+}
+
+.container_article > p {
+    max-width: 50%;
+}
+
+article > .container_article {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: column;
+    width: 50%;
+}
+
+.resume_part {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card_me {
+    width: 50%;
+    background: var(--bg-card);
+    border-radius: 26px;
+}
+
+.card_me > img {
+    max-width: 100%;
+    border-top-left-radius: 26px;
+    border-top-right-radius: 26px;
+}
+
+.card_me > h3 {
+    padding: 20px;
+    color: var(--white);
+}
+
+.card_me > p {
+    padding: 20px;
+    padding-top: 0px;
+    color: var(--white);
+}
+
+.form_part {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row-reverse;
+    padding: 20px;
+    margin-top: 20px;
+    background: var(--color);
+    margin-bottom: 40px;
+    border-radius: 26px;
+}
+
+.form_part > form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    width: 50%;
+    background: var(--bg-card);
+    color: var(--white);
+    border-radius: 26px;
+}
+
+.form_part > form > input, .form_part > form > textarea {
+    width: 300px;
+    padding: 20px;
+    outline: none;
+    background: none;
+    color: var(--white);
+    border: 1px solid var(--white);
+    border-radius: 26px;
+    resize: none;
+    transition: 0.4s;
+}
+
+.form_part > form > input[type = "text"]:focus {
+    background: var(--color-white-theme);
+    color: var(--bg-card);
+}
+
+.form_part > form > input[type = "email"]:focus {
+    background: var(--color-white-theme);
+    color: var(--bg-card);
+}
+
+.form_part > form > textarea:focus {
+    background: var(--color-white-theme);
+    color: var(--bg-card);
+}
+
+.form_part > form > input[type = "submit"] {
+    cursor: pointer;
+}
+
+.form_part > form > input[type = "submit"]:hover {
+    background: var(--color-white-theme);
+    color: var(--bg-card);
+    transform: scale(0.95);
+}
+
+.positive {
+    color: var(--bg-card) !important;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.negative {
+    color: red !important;
+    padding: 20px;
+    font-size: 16px;
+}
+
+.output {
+    background: var(--color-black);
+    border-radius: 26px;
+}
+
+.title_table {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--white) !important;
+}
+
+.education {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+}
+
+.education > table {
+    min-width: 400px;
+}
+
+.education_part_table > td {
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    background: var(--bg-card);
+    color: var(--white);
+    margin: 10px;
+    border-radius: 26px;
+    font-weight: 700;
+    font-size: 16px;
+}
+ 
+footer {
+    background: var(--bg-card);
+    color: var(--white);
+    padding: 20px;
+    font-size: 16px;
+    width: 100%;
+    text-align: center;
+}
+
+footer > .credits {
+    color: var(--white) !important;
+}
+
+.contact_social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+    margin-top: 20px;
+    border-right: 1px solid var(--backgrund);
+    min-height: 500px;
+    width: 50%;
+}
+
+.social {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    padding: 10px;
+    background: var(--backgrund);
+    color: var(--white);
+    width: 260px;
+    font-size: 14px;
+    border-radius: 26px;
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.social:hover {
+    transform: scale(0.95);
+}
+
+#phone {
+    display: none;
+}
+
+@media screen and (max-width: 768px) {
+    article {
+        width: 100%;
+        flex-direction: column !important;
+        gap: 20px;
+    }
+
+    #desktop {
+        display: none;
+    }
+
+    #phone {
+        display: flex;
+    }
+
+    .navbar_phone {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        padding: 20px;
+        color: var(--white);
+    }
+
+    .active_menu {
+        font-size: 60px;
+        width: 100%;
+        display: flex;
+        justify-content: flex-end;
+        align-items: flex-end;
+    }
+
+    .container_navbar_phone {
+        position: fixed;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: none;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 10px;
+        background: var(--backgrund);
+    }
+
+    .container_navbar_phone > li {
+        list-style: none;
+    }
+
+    .container_navbar_phone > li > a {
+        color: var(--white);
+        font-size: 20px;
+        font-weight: 800;
+        text-decoration: underline;
+    }
+
+    .container_article {
+        width: 100% !important;
+        text-align: center;
+    }
+
+    .container_article > .card_me {
+        width: 100%;
+    }
+
+    .bg {
+        background-position: center;
+    }
+
+    .form_part {
+        flex-direction: column-reverse;
+    }
+
+    .form_part > form {
+        width: 100%;
+        padding: 0px;
+    }
+
+    .form_part > form > input {
+        width: 100%;
+    }
+
+    .form_part > form > textarea {
+        width: 100%;
+    }
+
+    .contact_social {
+        width: 100%;
+        border-right: none;
+        min-height: 100px;
+        padding-bottom: 40px;
+        border-bottom: 1px solid var(--backgrund);
+        margin-bottom: 20px;
+    }
+
+    .education {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .education > table {
+        max-width: 100%;
+        min-width: 100%;
+    }
+
+    .container_article p {
+        max-width: 100%;
+    }
+}

@@ -1,0 +1,57 @@
+from flask import Flask, request, jsonify, json, send_file, render_template, session
+from verify_password import password_check
+from messages_back import return_messages
+from send_message import save_message
+from dotenv import load_dotenv
+import os
+from datetime import timedelta
+
+load_dotenv()
+
+app = Flask(__name__)
+app.secret_key = os.getenv('KEY')
+app.permanent_session_lifetime = timedelta(days=1)
+
+@app.get("/")
+def index():
+    return render_template('index.html')
+
+@app.get("/admin")
+def admin_pass():
+    return render_template("admin_check.html")
+
+@app.get("/admin-pannel")
+def admin():
+    if session.get("active") == "active":
+        mes = return_messages()
+        return render_template("admin.html", messages=mes, name="Mattia")
+    else:
+        return render_template("admin_check.html")
+
+@app.post("/send_form")
+def send_f():
+    data = request.json
+    name = data["name"]
+    surname = data["surname"]
+    email = data["email"]
+    message = data["message"]
+    resp = save_message(name, surname, email, message)
+    if resp == True:
+        return jsonify({"success": True})
+    else:
+        return jsonify({"success": False})
+
+@app.post("/pasw")
+def verify():
+    data = request.json
+    pas = data["password"]
+    result = password_check(pas)
+    if result == True:
+        session.permanent = True
+        session['active'] = "active"
+    else:
+        session['active'] = "non-active"
+    return jsonify({"pasw": result})
+
+if __name__ == "__main__":
+    app.run(debug=True)

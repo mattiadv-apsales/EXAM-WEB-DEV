@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>ADMIN - PANNEL</title>
+        <link rel = "stylesheet" href = "../static/style/admin.css">
+    </head>
+    <body>
+        <div class = "container">
+            <div class = "welcome">
+                <h1>Bentornato {{name}}</h1>
+                <p>Questi sono i messaggi ricevuti dal form</p>
+            </div>
+            <div class = "messages" id = "messages">
+                {%for message in messages%}
+                    <div class = "card_message">
+                        <div class = "title">MESSAGGIO</div>
+                        <div class = "info">{{message.nome}}</div>
+                        <div class = "info">{{message.cognome}}</div>
+                        <div class = "info"><a href="mailto:{{message.email}}">{{message.email}}</a></div>
+                        <div class = "info">{{message.messaggio}}</div>
+                    </div>
+                {%endfor%}
+            </div>
+        </div>
+        
+        <script src = "../static/script/admin.js"></script>
+    </body>
+</html>
