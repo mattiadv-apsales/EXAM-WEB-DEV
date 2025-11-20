@@ -174,7 +174,7 @@ article {
 }
 
 .container_article > p {
-    max-width: 50%;
+    max-width: 90%;
 }
 
 article > .container_article {
@@ -183,6 +183,7 @@ article > .container_article {
     align-items: center;
     flex-direction: column;
     width: 50%;
+    gap: 10px;
 }
 
 .resume_part {
@@ -395,6 +396,7 @@ footer > .credits {
     background: var(--bg-card);
     border-radius: 26px;
     width: 100%;
+    gap: 10px;
     cursor: pointer;
     margin-bottom: 20px;
     text-align: center;
