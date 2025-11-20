@@ -2,6 +2,7 @@ from flask import Flask, request, jsonify, json, send_file, render_template, ses
 from verify_password import password_check
 from messages_back import return_messages
 from send_message import save_message
+from page_visual import visual_page, return_visual_page
 from dotenv import load_dotenv
 import os
 from datetime import timedelta
@@ -14,6 +15,7 @@ app.permanent_session_lifetime = timedelta(days=1)
 
 @app.get("/")
 def index():
+    visual_page()
     return render_template('index.html')
 
 @app.get("/admin")
@@ -24,7 +26,8 @@ def admin_pass():
 def admin():
     if session.get("active") == "active":
         mes = return_messages()
-        return render_template("admin.html", messages=mes, name="Mattia")
+        vis = return_visual_page()
+        return render_template("admin.html", messages=mes, name="Mattia", visual=vis)
     else:
         return render_template("admin_check.html")
 

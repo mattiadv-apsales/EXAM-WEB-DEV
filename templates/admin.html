@@ -9,13 +9,19 @@
     <body>
         <div class = "container">
             <div class = "welcome">
-                <h1>Bentornato {{name}}</h1>
-                <p>Questi sono i messaggi ricevuti dal form</p>
+                <h1>Welcome {{name}}</h1>
+                <p>Here you can see visualition of page and messages from the form</p>
+            </div>
+            <div class = "widget">
+                <div class = "visual">
+                    <h1>Visual page: {{visual}}</h1>
+                </div>
             </div>
             <div class = "messages" id = "messages">
                 {%for message in messages%}
                     <div class = "card_message">
-                        <div class = "title">MESSAGGIO</div>
+                        <div class = "title">MESSAGE</div>
+                        <br>
                         <div class = "info">{{message.nome}}</div>
                         <div class = "info">{{message.cognome}}</div>
                         <div class = "info"><a href="mailto:{{message.email}}">{{message.email}}</a></div>
