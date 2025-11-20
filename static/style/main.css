@@ -298,7 +298,7 @@ article > .container_article {
 }
 
 .title_table {
-    font-size: 22px;
+    font-size: 40px;
     font-weight: 800;
     color: var(--white) !important;
 }
