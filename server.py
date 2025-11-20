@@ -31,6 +31,11 @@ def admin():
     else:
         return render_template("admin_check.html")
 
+@app.post("/update_visual")
+def update_visual():
+    visuals = return_visual_page()
+    return jsonify({"visual": visuals})
+
 @app.post("/send_form")
 def send_f():
     data = request.json
