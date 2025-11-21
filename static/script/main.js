@@ -116,6 +116,10 @@ function send_form_server() {
         output.classList.add("negative");
         output.innerHTML = "The email camp is incorrect!";
         setTimeout(clear_output, 3000)
+    } else if (m_value == "") {
+        output.classList.add("negative");
+        output.innerHTML = "Insert a message!";
+        setTimeout(clear_output, 3000)
     } else if (m_value.length <= 10) {
         output.classList.add("negative");
         output.innerHTML = "The message MUST be minimum 11 characther for send it!";
