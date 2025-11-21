@@ -280,6 +280,11 @@ article > .container_article {
     transform: scale(0.95);
 }
 
+.form_part > form > h1 {
+    text-align: center;
+    padding-bottom: 10px;
+}
+
 .positive {
     color: lightgreen !important;
     padding: 20px;

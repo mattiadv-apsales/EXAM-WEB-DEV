@@ -75,7 +75,7 @@ function send_form_server() {
     let e_value = email.value;
     let m_value = message.value;
 
-    if (n_value != "" && s_value != "" && e_value != "" && e_value.includes("@") && e_value.includes(".") && m_value != "") {
+    if (n_value != "" && s_value != "" && email.checkValidity() && m_value != "") {
         fetch("/send_form", {
             method: "POST",
             headers: {
