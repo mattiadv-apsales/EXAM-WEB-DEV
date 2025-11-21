@@ -75,7 +75,7 @@ function send_form_server() {
     let e_value = email.value;
     let m_value = message.value;
 
-    if (n_value != "" && s_value != "" && email.checkValidity() && m_value != "") {
+    if (n_value != "" && s_value != "" && email.checkValidity() && m_value != "" && m_value.length > 10) {
         fetch("/send_form", {
             method: "POST",
             headers: {
@@ -100,9 +100,29 @@ function send_form_server() {
 
             setTimeout(clear_output, 2500)
         })
+    } else if (n_value == "") {
+        output.classList.add("negative");
+        output.innerHTML = "Insert a name!";
+        setTimeout(clear_output, 3000)
+    } else if (s_value == "") {
+        output.classList.add("negative");
+        output.innerHTML = "Insert a surname!";
+        setTimeout(clear_output, 3000)
+    } else if (e_value == "") {
+        output.classList.add("negative");
+        output.innerHTML = "Insert an email!";
+        setTimeout(clear_output, 3000)
+    } else if (email.checkValidity() == false) {
+        output.classList.add("negative");
+        output.innerHTML = "The email camp is incorrect!";
+        setTimeout(clear_output, 3000)
+    } else if (m_value.length <= 10) {
+        output.classList.add("negative");
+        output.innerHTML = "The message MUST be minimum 11 characther for send it!";
+        setTimeout(clear_output, 3000)
     } else {
         output.classList.add("negative");
-        output.innerHTML = "Compilare tutti i campi correttamente";
+        output.innerHTML = "Compile all camp to send the form!";
         setTimeout(clear_output, 3000)
     }
 }
