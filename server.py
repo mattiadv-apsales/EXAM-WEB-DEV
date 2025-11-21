@@ -31,7 +31,15 @@ def admin():
         return render_template("admin.html", messages=mes, name="Mattia", visual=vis)
     else:
         return render_template("admin_check.html")
-    
+
+@app.get("/.env")
+def rick():
+    return render_template('rick_roll.html')
+
+@app.get("/env")
+def roll():
+    return render_template('rick_roll.html')
+
 @app.post("/update_messages")
 def update_message():
     mes = return_messages()
