@@ -41,19 +41,19 @@ messages_update.addEventListener('click', function() {
 
             let name = document.createElement('div')
             name.classList.add("info")
-            name.innerHTML = msg["nome"]
+            name.innerHTML = "<span class = 'info_point'>Name: </span>" + msg["nome"]
 
             let surname = document.createElement('div')
             surname.classList.add("info")
-            surname.innerHTML = msg["cognome"]
+            surname.innerHTML = "<span class = 'info_point'>Surname: </span>" +  msg["cognome"]
 
             let email = document.createElement('div')
             email.classList.add("info")
-            email.innerHTML = "<a href='mailto:" + msg["email"] + "'>" + msg["email"] + "</a>"
+            email.innerHTML = "<span class = 'info_point'>Email: </span>" +  "<a href='mailto:" + msg["email"] + "'>" + msg["email"] + "</a>"
 
             let messa = document.createElement('div')
             messa.classList.add("info")
-            messa.innerHTML = msg["messaggio"]
+            messa.innerHTML = "<span class = 'info_point'>Message: </span>" +  msg["messaggio"]
 
             let button = document.createElement('button')
             button.classList.add("delete_message_button")

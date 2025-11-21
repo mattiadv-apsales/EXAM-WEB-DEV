@@ -107,3 +107,7 @@ button {
 button:hover {
     transform: scale(0.95);
 }
+
+.info_point {
+    color: lightgreen;
+}

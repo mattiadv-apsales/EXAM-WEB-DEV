@@ -25,10 +25,10 @@
                     <div class = "card_message" id = "card_{{message.id}}">
                         <div class = "title">MESSAGE</div>
                         <br>
-                        <div class = "info">{{message.nome}}</div>
-                        <div class = "info">{{message.cognome}}</div>
-                        <div class = "info"><a href="mailto:{{message.email}}">{{message.email}}</a></div>
-                        <div class = "info">{{message.messaggio}}</div>
+                        <div class = "info"><span class = "info_point">Name: </span>{{message.nome}}</div>
+                        <div class = "info"><span class = "info_point">Surname: </span>{{message.cognome}}</div>
+                        <div class = "info"><span class = "info_point">Email: </span><a href="mailto:{{message.email}}">{{message.email}}</a></div>
+                        <div class = "info"><span class = "info_point">Message: </span>{{message.messaggio}}</div>
                         <button class = "delete_message_button" id = "{{message.id}}" onclick="delete_messages({{message.id}})">Delete</button>
                     </div>
                 {%endfor%}
