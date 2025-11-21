@@ -87,10 +87,10 @@ function send_form_server() {
         .then(data => {
             if (data.success == true) {
                 output.classList.add("positive");
-                output.innerHTML = "Messaggio inviato con successo!";
+                output.innerHTML = "Message sent! Thank you";
             } else {
                 output.classList.add("negative");
-                output.innerHTML = "Messaggio non inviato, errore del server";
+                output.innerHTML = "Message not sent! Server error, i'm sorry :(";
             }
 
             name.value = ""
