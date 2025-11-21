@@ -39,5 +39,3 @@ def save_message(name, surname, email, message):
         return True
     except:
         return False
-    
-save_message("m", 'm', 'm', 'm')
