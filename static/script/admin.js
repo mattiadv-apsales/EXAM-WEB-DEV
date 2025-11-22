@@ -6,7 +6,7 @@ let messages = document.getElementById('messages');
 
 let output = document.getElementById('output');
 
-const temp_for_loading = 3000
+const temp_for_loading = 1000
 
 function clear_output() {
     output.innerHTML = ""
@@ -47,6 +47,7 @@ function fetch_update_message() {
     })
     .then(response => response.json())
     .then(data => {
+        let number_old_messages = messages.children.length
         messages.innerHTML = ""
         output.innerHTML = ""
         messages_update.disabled = false
@@ -96,6 +97,17 @@ function fetch_update_message() {
 
             messages.appendChild(card_message)
         });
+
+        let diff = 0
+
+        if (number_old_messages < messages.children.length) {
+            diff = messages.children.length - number_old_messages
+            output.innerHTML = diff + " new messages"
+            setTimeout(clear_output, temp_for_loading)
+        } else {
+            output.innerHTML = "No new messages"
+            setTimeout(clear_output, temp_for_loading)
+        }
     })
 }
 
