@@ -14,11 +14,12 @@
             </div>
             <div class = "widget">
                 <div class = "visual">
-                    <h1 id = "visual_p">Visual page: {{visual}}</h1><button id = "update_visual">Update visual</button>
+                    <h1 id = "visual_p">Visual page: <span id = 'visual_page'>{{visual}}</span></h1><button id = "update_visual">Update visual</button>
                 </div>
                 <div class = "visual">
                     <button id = "messages_update">Update messages</button>
                 </div>
+                <div class = "output" id = "output">ciao</div>
             </div>
             <div class = "messages" id = "messages">
                 {%for message in messages%}

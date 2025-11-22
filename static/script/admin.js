@@ -4,7 +4,15 @@ let visual_p = document.getElementById('visual_p');
 let messages_update = document.getElementById('messages_update');
 let messages = document.getElementById('messages');
 
-update_visual.addEventListener('click', function() {
+let output = document.getElementById('output');
+
+const temp_for_loading = 3000
+
+function clear_output() {
+    output.innerHTML = ""
+}
+
+function fetch_update_visual() {
     fetch("/update_visual", {
         method: "POST",
         headers: {
@@ -13,11 +21,24 @@ update_visual.addEventListener('click', function() {
     })
     .then(response => response.json())
     .then(data => {
-        visual_p.innerHTML = "Visual page: " + data.visual
-    })
-})
+        let visual_page = document.getElementById('visual_page').innerText;
+        let diff = 0
+        if (Number(data.visual) > Number(visual_page)) {
+            diff = Number(data.visual) - Number(visual_page);
+        }
+        if (diff > 0) {
+            output.innerHTML = diff + " new visual on the website"
+        } else {
+            output.innerHTML = "No new visual on the website"
+        }
+        visual_p.innerHTML = "Visual page: <span id = 'visual_page'>" + data.visual + "</span>"
 
-messages_update.addEventListener('click', function() {
+        setTimeout(clear_output, temp_for_loading)
+        update_visual.disabled = false
+    })
+}
+
+function fetch_update_message() {
     fetch("/update_messages", {
         method: "POST",
         headers: {
@@ -27,6 +48,8 @@ messages_update.addEventListener('click', function() {
     .then(response => response.json())
     .then(data => {
         messages.innerHTML = ""
+        output.innerHTML = ""
+        messages_update.disabled = false
         
         data.messages.forEach(msg => {
             let card_message = document.createElement('div')
@@ -74,6 +97,18 @@ messages_update.addEventListener('click', function() {
             messages.appendChild(card_message)
         });
     })
+}
+
+update_visual.addEventListener('click', function() {
+    output.innerHTML = "We are loading new visual, please attend 3 seconds..."
+    setTimeout(fetch_update_visual, temp_for_loading)
+    update_visual.disabled = true
+})
+
+messages_update.addEventListener('click', function() {
+    output.innerHTML = "We are loading new messages, please attend 3 seconds..."
+    setTimeout(fetch_update_message, temp_for_loading)
+    messages_update.disabled = true
 })
 
 function delete_messages(id) {
@@ -89,6 +124,8 @@ function delete_messages(id) {
         if (data.status == true) {
             let card = document.getElementById('card_' + id)
             card.remove();
+            output.innerHTML = "Card deleted correctly"
+            setTimeout(clear_output, temp_for_loading)
         } else {
             return 0;
         }
