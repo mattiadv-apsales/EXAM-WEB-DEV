@@ -100,13 +100,13 @@ function fetch_update_message() {
 }
 
 update_visual.addEventListener('click', function() {
-    output.innerHTML = "We are loading new visual, please attend 3 seconds..."
+    output.innerHTML = "We are loading new visual, please wait 3 seconds..."
     setTimeout(fetch_update_visual, temp_for_loading)
     update_visual.disabled = true
 })
 
 messages_update.addEventListener('click', function() {
-    output.innerHTML = "We are loading new messages, please attend 3 seconds..."
+    output.innerHTML = "We are loading new messages, please wait 3 seconds..."
     setTimeout(fetch_update_message, temp_for_loading)
     messages_update.disabled = true
 })
