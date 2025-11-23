@@ -11,6 +11,36 @@ const temp_for_loading = 1500
 let email_messages_filter = document.getElementById('email_messages_filter');
 let read_or_not_check = document.getElementById('read_or_not');
 
+let filter_all_mex = document.getElementById('all_mex')
+let filter_read = document.getElementById('read')
+let filter_not_read = document.getElementById('not_read')
+
+filter_all_mex.addEventListener('click', function() {
+    for (let mex of messages.children) {
+        mex.style.display = "block"
+    }
+})
+
+filter_read.addEventListener('click', function() {
+    for (let mex of messages.children) {
+        if (mex.querySelector('input[type="checkbox"]').checked == true) {
+            mex.style.display = "block"
+        } else {
+            mex.style.display = "none"
+        }
+    }
+})
+
+filter_not_read.addEventListener('click', function() {
+    for (let mex of messages.children) {
+        if (mex.querySelector('input[type="checkbox"]').checked == false) {
+            mex.style.display = "block"
+        } else {
+            mex.style.display = "none"
+        }
+    }
+})
+
 function clear_output() {
     output.innerHTML = ""
 }
