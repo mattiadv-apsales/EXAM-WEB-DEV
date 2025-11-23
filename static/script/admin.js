@@ -241,6 +241,7 @@ function delete_messages(id) {
 }
 
 function update_read_or_not(id, value) {
+    console.log(id, value)
     fetch("/change_read_message", {
         method: "POST",
         headers: {

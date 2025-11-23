@@ -38,9 +38,9 @@
                         <br>
                         <div class = "info"><span class = "info_point">Read: </span>
                             {% if message.read == false %}
-                                <input type = "checkbox" class = 'read_or_not'>
+                                <input type = "checkbox" class = 'read_or_not' onclick = "update_read_or_not({{message.id}}, true)">
                             {% else %}
-                                <input type = "checkbox" checked=true>
+                                <input type = "checkbox" class = 'read_or_not' onclick = "update_read_or_not({{message.id}}, false)" checked>
                             {%endif%}
                         </div>
                         <div class = "info"><span class = "info_point">Name: </span>{{message.nome}}</div>
