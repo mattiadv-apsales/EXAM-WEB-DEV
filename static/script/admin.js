@@ -6,9 +6,10 @@ let messages = document.getElementById('messages');
 
 let output = document.getElementById('output');
 
-const temp_for_loading = 3000
+const temp_for_loading = 1500
 
 let email_messages_filter = document.getElementById('email_messages_filter');
+let read_or_not_check = document.getElementById('read_or_not');
 
 function clear_output() {
     output.innerHTML = ""
@@ -104,6 +105,24 @@ function fetch_update_message() {
 
             let br = document.createElement('br')
 
+            let checkbox = document.createElement('div')
+            checkbox.classList.add("info")
+
+            let checkbox_intern = document.createElement('input')
+            checkbox_intern.type = "checkbox"
+            if (msg["read"] == true) {
+                checkbox_intern.checked = true
+            } else {
+                checkbox_intern.checked = false
+            }
+            checkbox.classList.add('read_or_not')
+            checkbox.innerHTML = "<span class = 'info_point'>Read: </span>"
+            checkbox_intern.addEventListener('click', function() {
+                update_read_or_not(msg["id"], checkbox_intern.checked)
+            })
+
+            checkbox.append(checkbox_intern)
+
             let name = document.createElement('div')
             name.classList.add("info")
             name.innerHTML = "<span class = 'info_point'>Name: </span>" + msg["nome"]
@@ -130,6 +149,7 @@ function fetch_update_message() {
 
             card_message.appendChild(title)
             card_message.appendChild(br)
+            card_message.append(checkbox)
             card_message.appendChild(name)
             card_message.appendChild(surname)
             card_message.appendChild(email)
@@ -183,5 +203,19 @@ function delete_messages(id) {
         } else {
             return 0;
         }
+    })
+}
+
+function update_read_or_not(id, value) {
+    fetch("/change_read_message", {
+        method: "POST",
+        headers: {
+            "content-type": "application/json"
+        },
+        body: JSON.stringify({"id": id, "value": value})
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data.success)
     })
 }

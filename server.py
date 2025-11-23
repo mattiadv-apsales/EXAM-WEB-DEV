@@ -5,6 +5,7 @@ from send_message import save_message
 from page_visual import visual_page, return_visual_page
 from delete_message import delete_messages
 from recupera_email import return_all_email
+from update_message import update_read_or_not
 from dotenv import load_dotenv
 import os
 from datetime import timedelta
@@ -72,6 +73,14 @@ def send_f():
         return jsonify({"success": True})
     else:
         return jsonify({"success": False})
+    
+@app.post("/change_read_message")
+def change_read():
+    data = request.json
+    id = data["id"]
+    value = data["value"]
+    response = update_read_or_not(id, value)
+    return jsonify({"success": response})
 
 @app.post("/pasw")
 def verify():

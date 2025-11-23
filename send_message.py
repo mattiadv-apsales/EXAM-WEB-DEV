@@ -23,7 +23,8 @@ def save_message(name, surname, email, message):
             "nome": name,
             "cognome": surname,
             "email": email,
-            "messaggio": message
+            "messaggio": message,
+            "read": False
         }
 
         all_message = []
