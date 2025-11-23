@@ -6,11 +6,52 @@ let messages = document.getElementById('messages');
 
 let output = document.getElementById('output');
 
-const temp_for_loading = 1000
+const temp_for_loading = 3000
+
+let email_messages_filter = document.getElementById('email_messages_filter');
 
 function clear_output() {
     output.innerHTML = ""
 }
+
+function filter_by_email(email) {
+    for (let mex of messages.children) {
+        if (mex.querySelector('a').href == "mailto:" + email) {
+            mex.style.display = "block"
+        } else {
+            mex.style.display = "none"
+        }
+    }
+}
+
+email_messages_filter.addEventListener('change', function() {
+    filter_by_email(email_messages_filter.value)
+})
+
+function upload_email_filter() {
+    fetch("/all_email", {
+        method: "GET",
+        headers: {
+            "content-type": "application/json"
+        }
+    })
+    .then(response => response.json())
+    .then(data => {
+        email_messages_filter.innerHTML = ""
+        email_messages_filter.innerHTML = "<option value='select_none' selected disabled>Filter by email</option>"
+        data.email.forEach(em => {
+            let new_choice = document.createElement('option')
+            new_choice.innerHTML = em
+            new_choice.value = em
+
+            email_messages_filter.appendChild(new_choice)
+        })
+    })
+}
+
+window.addEventListener('load', function() {
+    upload_email_filter()
+})
 
 function fetch_update_visual() {
     fetch("/update_visual", {
@@ -103,6 +144,7 @@ function fetch_update_message() {
         if (number_old_messages < messages.children.length) {
             diff = messages.children.length - number_old_messages
             output.innerHTML = diff + " new messages"
+            upload_email_filter()
             setTimeout(clear_output, temp_for_loading)
         } else {
             output.innerHTML = "No new messages"

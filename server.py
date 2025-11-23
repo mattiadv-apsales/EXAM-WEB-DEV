@@ -4,6 +4,7 @@ from messages_back import return_messages
 from send_message import save_message
 from page_visual import visual_page, return_visual_page
 from delete_message import delete_messages
+from recupera_email import return_all_email
 from dotenv import load_dotenv
 import os
 from datetime import timedelta
@@ -83,6 +84,11 @@ def verify():
     else:
         session['active'] = "non-active"
     return jsonify({"pasw": result})
+
+@app.get("/all_email")
+def return_email():
+    email = return_all_email()
+    return jsonify({"email": email})
 
 if __name__ == "__main__":
     app.run(debug=True)

@@ -119,3 +119,22 @@ button:hover {
     text-align: center;
     padding-top: 20px;
 }
+
+.filter_messages{
+    padding: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 40px;
+    padding-bottom: 0px;
+}
+
+#email_messages_filter {
+    padding: 20px;
+    border-radius: 26px;
+    border: 1px solid var(--backgrund);
+    background: var(--color-white-theme);
+    color: var(--white);
+    font-size: 16px;
+}
