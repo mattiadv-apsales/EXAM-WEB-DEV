@@ -19,6 +19,7 @@ filter_all_mex.addEventListener('click', function() {
     for (let mex of messages.children) {
         mex.style.display = "block"
     }
+    email_messages_filter.value = "select_none"
 })
 
 filter_read.addEventListener('click', function() {
@@ -29,6 +30,7 @@ filter_read.addEventListener('click', function() {
             mex.style.display = "none"
         }
     }
+    email_messages_filter.value = "select_none"
 })
 
 filter_not_read.addEventListener('click', function() {
@@ -39,6 +41,7 @@ filter_not_read.addEventListener('click', function() {
             mex.style.display = "none"
         }
     }
+    email_messages_filter.value = "select_none"
 })
 
 function clear_output() {
