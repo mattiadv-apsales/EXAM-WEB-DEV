@@ -229,6 +229,7 @@ function delete_messages(id) {
     .then(response => response.json())
     .then(data => {
         if (data.status == true) {
+            upload_email_filter()
             let card = document.getElementById('card_' + id)
             card.remove();
             output.innerHTML = "Card deleted correctly"
