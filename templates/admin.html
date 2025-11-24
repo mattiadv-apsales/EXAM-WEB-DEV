@@ -23,6 +23,7 @@
                 <div class = "visual cont">
                     <button id = "messages_update">Update messages</button>
                 </div>
+                <div class = "output" id = "output"></div>
                 <div class = "filter_messages cont" id = "filter_messages">
                     <select id = "email_messages_filter">
                         <option value="select an email" selected disabled>Filter by email</option>
@@ -33,7 +34,6 @@
                         <button id = "not_read">Not Read</button>
                     </div>
                 </div>
-                <div class = "output" id = "output"></div>
             </div>
             <div class = "messages cont" id = "messages">
                 {%for message in messages%}

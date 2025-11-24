@@ -194,3 +194,12 @@ input[type = "checkbox"]:checked {
     align-items: center;
     border-radius: 50% !important;
 }
+
+.filter_all_mex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+}
