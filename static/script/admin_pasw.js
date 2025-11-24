@@ -22,11 +22,11 @@ function send_password_verify() {
     .then(data => {
         if (data.pasw == true) {
             output.classList.add("positive");
-            output.innerHTML = "Corretta";
+            output.innerHTML = "Password correct";
             window.location.href = "/admin-pannel"
         } else {
             output.classList.add("negative");
-            output.innerHTML = "Password errata";
+            output.innerHTML = "Access denied";
         }
 
         setTimeout(reset_output, 1500);

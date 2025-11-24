@@ -118,6 +118,7 @@ button:hover {
     font-weight: 800;
     text-align: center;
     padding-top: 20px;
+    padding-bottom: 20px;
 }
 
 .filter_messages{
