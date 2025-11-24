@@ -308,16 +308,28 @@ article > .container_article {
     color: var(--white) !important;
 }
 
+thead > tr > th {
+    font-size: 40px;
+    font-weight: 800;
+    color: var(--white) !important;
+    background: var(--color-white-theme) !important;
+    border-radius: 10px;
+}
+
 .education {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: flex-start;
     flex-wrap: wrap;
+    gap: 20px;
 }
 
 .education > table {
-    min-width: 400px;
+    min-width: 100%;
+    border-radius: 26px;
+    padding: 20px;
+    max-width: 100%;
 }
 
 .education_part_table > td {
@@ -428,6 +440,25 @@ footer > .credits {
     border-radius: 26px;
 }
 
+.year {
+    font-size: 14px;
+    font-weight: 400;
+    color: lightgreen;
+    text-align: center;
+}
+
+.description {
+    font-size: 14px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.qualify {
+    font-size: 18px;
+    font-weight: 600;
+    text-align: center;
+}
+
 @media screen and (max-width: 768px) {
     article {
         width: 100%;
@@ -500,12 +531,15 @@ footer > .credits {
     }
 
     .form_part {
-        flex-direction: column-reverse;
+        flex-direction: column;
     }
 
     .form_part > form {
         width: 100%;
         padding: 0px;
+        border-bottom: 1px solid var(--backgrund);
+        border-radius: 0px;
+        padding-bottom: 40px;
     }
 
     .form_part > form > input {
@@ -521,7 +555,6 @@ footer > .credits {
         border-right: none;
         min-height: 100px;
         padding-bottom: 40px;
-        border-bottom: 1px solid var(--backgrund);
         margin-bottom: 20px;
     }
 
