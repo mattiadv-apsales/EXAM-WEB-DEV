@@ -15,6 +15,57 @@ let filter_all_mex = document.getElementById('all_mex')
 let filter_read = document.getElementById('read')
 let filter_not_read = document.getElementById('not_read')
 
+let button_for_analytics = document.getElementById('analytics');
+let button_for_contacts = document.getElementById('contacts');
+
+window.addEventListener('DOMContentLoaded', function() {
+    let all_analy = document.querySelectorAll('.analy')
+    let all_cont = document.querySelectorAll('.cont')
+
+    button_for_analytics.classList.add("active");
+    button_for_contacts.classList.remove("active");
+
+    for (let a of all_analy) {
+        a.style.display = "block"
+    }
+
+    for (let c of all_cont) {
+        c.style.display = "none"
+    }
+})
+
+button_for_contacts.addEventListener('click', function() {
+    let all_analy = document.querySelectorAll('.analy')
+    let all_cont = document.querySelectorAll('.cont')
+
+    button_for_analytics.classList.remove("active");
+    button_for_contacts.classList.add("active");
+
+    for (let a of all_analy) {
+        a.style.display = "none"
+    }
+
+    for (let c of all_cont) {
+        c.style.display = "flex"
+    }
+})
+
+button_for_analytics.addEventListener('click', function() {
+    let all_analy = document.querySelectorAll('.analy')
+    let all_cont = document.querySelectorAll('.cont')
+
+    button_for_analytics.classList.add("active");
+    button_for_contacts.classList.remove("active");
+
+    for (let a of all_analy) {
+        a.style.display = "block"
+    }
+
+    for (let c of all_cont) {
+        c.style.display = "none"
+    }
+})
+
 filter_all_mex.addEventListener('click', function() {
     for (let mex of messages.children) {
         mex.style.display = "block"
@@ -174,7 +225,7 @@ function fetch_update_message() {
 
             let button = document.createElement('button')
             button.classList.add("delete_message_button")
-            button.innerHTML = "Delete"
+            button.innerHTML = '<svg width = "20px" height = "20px" viewBox="0 -0.5 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>delete [#ff0000]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-179.000000, -360.000000)" fill="#ff0000"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M130.35,216 L132.45,216 L132.45,208 L130.35,208 L130.35,216 Z M134.55,216 L136.65,216 L136.65,208 L134.55,208 L134.55,216 Z M128.25,218 L138.75,218 L138.75,206 L128.25,206 L128.25,218 Z M130.35,204 L136.65,204 L136.65,202 L130.35,202 L130.35,204 Z M138.75,204 L138.75,200 L128.25,200 L128.25,204 L123,204 L123,206 L126.15,206 L126.15,220 L140.85,220 L140.85,206 L144,206 L144,204 L138.75,204 Z" id="delete-[#ff0000]"> </path> </g> </g> </g> </g></svg>'
             button.id = msg["id"]
             button.addEventListener('click', function() {
                 delete_messages(msg["id"])

@@ -50,7 +50,6 @@ p {
     background: var(--color-black);
     color: var(--white);
     border-radius: 26px;
-    width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -154,4 +153,44 @@ input[type = "checkbox"] {
 
 input[type = "checkbox"]:checked {
     background: lightgreen;
+}
+
+.category {
+    padding: 15px;
+    border-radius: 26px;
+    font-size: 16px;
+    background: var(--bg-card);
+    color: var(--white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.cat {
+    padding: 15px;
+    border-radius: 26px;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    transition: 0.4s;
+}
+
+.cat:hover {
+    background: var(--color-white-theme);
+}
+
+.cat.active {
+    background: var(--color-white-theme);
+}
+
+.delete_message_button {
+    width: 40px !important;
+    height: 40px !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50% !important;
 }

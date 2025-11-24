@@ -12,14 +12,18 @@
                 <h1>Welcome {{name}}</h1>
                 <p>Here you can see visuals of the page and messages from the form</p>
             </div>
+            <div class = "category">
+                <div class = "cat" id = "analytics"><svg width = "20px" height = "20px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>Analytics</title> <g id="Analytics" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" stroke-dasharray="0,0" stroke-linecap="round"> <path d="M4,18.9999905 L7.75407946,11.491832 C7.8680565,11.2638231 8.06482016,11.0879651 8.30413884,11.0001847 C9.11356935,10.7032911 9.60000359,10.8000012 9.76344156,11.2903152 L11.1190224,15.3570574 C11.1996482,15.5988744 11.3695623,15.8007859 11.5940587,15.9215227 C12.3533352,16.3298705 12.8485386,16.3029137 13.079669,15.8406525 L18,5.99999082 M13,6.46409237 L17.2774408,5.31795559 C17.4347269,5.27579637 17.5999292,5.27269863 17.7586883,5.30891799 C18.3183612,5.43660193 18.6397719,5.65560146 18.7229204,5.96591657 L19.9282036,10.4640923" id="Vector" stroke="#fff" stroke-width="2"> </path> </g> </g></svg>Analytics</div>
+                <div class = "cat" id = "contacts"><svg width = "20px" height = "20px" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.a{fill:none;stroke:#fff;stroke-linecap:round;stroke-linejoin:round;}</style></defs><path class="a" d="M24,5.5a9.2371,9.2371,0,1,1-9.22,9.2543v-.0172A9.2371,9.2371,0,0,1,24,5.5Z"></path><path class="a" d="M24,27.3973c10.3208,0,18.457,6.8726,18.457,10.2956V42.5H5.543V37.6069C5.543,34.1839,13.6792,27.3973,24,27.3973Z"></path></g></svg>Contacts</div>
+            </div>
             <div class = "widget">
-                <div class = "visual">
-                    <h1 id = "visual_p">Visual page: <span id = 'visual_page'>{{visual}}</span></h1><button id = "update_visual">Update visual</button>
+                <div class = "visual analy">
+                    <h1 id = "visual_p">Visual page: <span id = 'visual_page'>{{visual}}</span></h1><button class = "analy" id = "update_visual">Update visual</button>
                 </div>
-                <div class = "visual">
+                <div class = "visual cont">
                     <button id = "messages_update">Update messages</button>
                 </div>
-                <div class = "filter_messages" id = "filter_messages">
+                <div class = "filter_messages cont" id = "filter_messages">
                     <select id = "email_messages_filter">
                         <option value="select an email" selected disabled>Filter by email</option>
                     </select>
@@ -31,7 +35,7 @@
                 </div>
                 <div class = "output" id = "output"></div>
             </div>
-            <div class = "messages" id = "messages">
+            <div class = "messages cont" id = "messages">
                 {%for message in messages%}
                     <div class = "card_message" id = "card_{{message.id}}">
                         <div class = "title">MESSAGE</div>
@@ -47,7 +51,7 @@
                         <div class = "info"><span class = "info_point">Surname: </span>{{message.cognome}}</div>
                         <div class = "info"><span class = "info_point">Email: </span><a href="mailto:{{message.email}}">{{message.email}}</a></div>
                         <div class = "info"><span class = "info_point">Message: </span>{{message.messaggio}}</div>
-                        <button class = "delete_message_button" id = "{{message.id}}" onclick="delete_messages({{message.id}})">Delete</button>
+                        <button class = "delete_message_button" id = "{{message.id}}" onclick="delete_messages({{message.id}})"><svg width = "20px" height = "20px" viewBox="0 -0.5 21 21" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>delete [#ff0000]</title> <desc>Created with Sketch.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Dribbble-Light-Preview" transform="translate(-179.000000, -360.000000)" fill="#ff0000"> <g id="icons" transform="translate(56.000000, 160.000000)"> <path d="M130.35,216 L132.45,216 L132.45,208 L130.35,208 L130.35,216 Z M134.55,216 L136.65,216 L136.65,208 L134.55,208 L134.55,216 Z M128.25,218 L138.75,218 L138.75,206 L128.25,206 L128.25,218 Z M130.35,204 L136.65,204 L136.65,202 L130.35,202 L130.35,204 Z M138.75,204 L138.75,200 L128.25,200 L128.25,204 L123,204 L123,206 L126.15,206 L126.15,220 L140.85,220 L140.85,206 L144,206 L144,204 L138.75,204 Z" id="delete-[#ff0000]"> </path> </g> </g> </g> </g></svg></button>
                     </div>
                 {%endfor%}
             </div>

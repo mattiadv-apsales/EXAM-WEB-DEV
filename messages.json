@@ -5,7 +5,7 @@
         "cognome": "asd",
         "email": "asd@asd.com",
         "messaggio": "aasjhdgfaj hgdjkahsgfdjjha sgdfa",
-        "read": true
+        "read": false
     },
     {
         "id": 3,
@@ -21,7 +21,7 @@
         "cognome": "De Vincentis",
         "email": "mattiadv25105@gmail.com",
         "messaggio": "Ciao volevo delle info, contattami pls!!!",
-        "read": true
+        "read": false
     },
     {
         "id": 5,
