@@ -18,6 +18,20 @@ let filter_not_read = document.getElementById('not_read')
 let button_for_analytics = document.getElementById('analytics');
 let button_for_contacts = document.getElementById('contacts');
 
+let active_cont_filter = document.getElementById('active_cont_filter');
+let filter_messages = document.getElementById('filter_messages')
+
+x = -1
+
+active_cont_filter.addEventListener('click', function() {
+    x = x * -1;
+    if (x == -1) {
+        filter_messages.style.maxHeight = "60px";
+    } else {
+        filter_messages.style.maxHeight = "1000px";
+    }
+})
+
 window.addEventListener('DOMContentLoaded', function() {
     let all_analy = document.querySelectorAll('.analy')
     let all_cont = document.querySelectorAll('.cont')
