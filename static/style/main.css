@@ -403,6 +403,8 @@ footer > .credits {
     align-items: center;
     flex-direction: column;
     gap: 10px;
+    min-width: 100%;
+    max-width: 100%;
 }
 
 .project {
@@ -429,7 +431,14 @@ footer > .credits {
 
 .range > .medium_high {
     width: 75%;
-    background: lightgreen;
+    background: green;
+    height: 100%;
+    border-radius: 26px;
+}
+
+.range > .medium {
+    width: 50%;
+    background: orange;
     height: 100%;
     border-radius: 26px;
 }
@@ -457,6 +466,12 @@ footer > .credits {
 .qualify {
     font-size: 18px;
     font-weight: 600;
+    text-align: center;
+}
+
+.name {
+    font-size: 40px;
+    font-weight: 800;
     text-align: center;
 }
 
