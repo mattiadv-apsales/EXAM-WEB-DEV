@@ -313,7 +313,8 @@ thead > tr > th {
     font-weight: 800;
     color: var(--white) !important;
     background: var(--color-white-theme) !important;
-    border-radius: 10px;
+    border-radius: 26px;
+    padding: 20px;
 }
 
 .education {
