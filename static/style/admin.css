@@ -200,6 +200,6 @@ input[type = "checkbox"]:checked {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+    gap: 5px;
     width: 100%;
 }
