@@ -191,6 +191,8 @@ input[type = "checkbox"]:checked {
     justify-content: center;
     align-items: center;
     border-radius: 50% !important;
+    background: none !important;
+    border: 1px solid red !important;
 }
 
 .filter_all_mex {
